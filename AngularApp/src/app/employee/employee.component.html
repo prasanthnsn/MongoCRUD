@@ -1,0 +1,44 @@
+<div class="row">
+    <div class="col s12 m6">
+      <div class="card">
+        <div class="card-content white-text">
+            <div class="row">
+                <div class="col s5">
+                    <form #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm)">
+                        <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="employeeService.selectedEmployee._id">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input type="text" name="name" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.name" placeholder="enter name" required>
+                                <label>Name: 
+                                    <label class="red-text">*</label>
+                                </label>
+                            </div>
+                            <div class="input-field col s12">
+                                <input type="text" name="position" #position="ngModel" [(ngModel)]="employeeService.selectedEmployee.position" placeholder="enter position">
+                                <label>position:</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <input type="text" name="office" #office="ngModel" [(ngModel)]="employeeService.selectedEmployee.office" placeholder="enter office">
+                                <label>office:</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <input type="number" name="salary" #number="ngModel" [(ngModel)]="employeeService.selectedEmployee.salary" placeholder="enter salary">
+                                <label>salary:</label>
+                            </div>
+                        </div>  
+                        <div class="row">
+                            <div class="input-field col s12 text-center">
+                                <button class="btn btn-danger" type="button" (click)="resetForm(employeeForm)">Reset</button>
+                                <button class="btn btn-primary" type="submit" [disabled]="!employeeForm.valid" >Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col s7">
+
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
